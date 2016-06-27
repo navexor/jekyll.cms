@@ -25,10 +25,16 @@ class PostServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton(
-            'post',
+            'App\Repositories\Post',
             function () {
-                return new Post(config('blog.file.main'));
+                $post = new Post(
+                    config('blog.file'),
+                    $this->app->make('App\Repositories\Post\PostParser')
+                );
+                return $post;
             }
         );
+
+        $this->app->bind('post', 'App\Repositories\Post');
     }
 }

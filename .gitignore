@@ -9,3 +9,6 @@ composer.lock
 
 # User-specific stuff:
 .idea
+public/vendor/
+public/photos/shares/
+public/photos/thumbs/

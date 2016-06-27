@@ -9,7 +9,8 @@
 return [
 
     'file' => [
-        'main' => '/var/www/blogs/ifl.local',
+        'main_dir' => '/var/www/blogs/ifl.local',
+        'posts_dir' => '/_posts'
     ],
 
 ];

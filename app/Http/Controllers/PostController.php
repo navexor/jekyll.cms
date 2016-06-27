@@ -16,6 +16,7 @@ class PostController extends Controller
 
     public function index()
     {
+        var_dump($this->postRepo);
         var_dump($this->postRepo->all());
         return view('posts.index');
     }
