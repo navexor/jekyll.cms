@@ -9,6 +9,15 @@ namespace App\Repositories\Post;
  */
 class PostParser
 {
+    private $_metaFields = [
+        'layout',
+        'title',
+        'date',
+        'categories',
+        'tags',
+        'author'
+    ];
+
     public function parseFile($fileContent = '')
     {
         $metaData = [];
@@ -22,11 +31,40 @@ class PostParser
             foreach ($metaLines as $metaLine) {
                 $isCorrectValues = preg_match_all('/^([^:]+):(.*)$/s', $metaLine, $metaParts);
                 if ($isCorrectValues && count($metaParts) > 2) {
-                    $metaData[$metaParts[1][0]] = trim($metaParts[2][0]);
+                    $value = trim($metaParts[2][0]);
+
+                    if ($value && $value[0] == '"' && $value[strlen($value) - 1] == '"') {
+                        $value = substr($value, 1, strlen($value) - 2);
+                    }
+                    $metaData[$metaParts[1][0]] = $value;
                 }
             }
         }
 
         return $metaData;
+    }
+
+    public function renderContent(array $parts)
+    {
+        $originalParts = $parts;
+
+        $parts = array_filter(
+            $parts,
+            function($k) {
+                return in_array($k, $this->_metaFields);
+            },
+            ARRAY_FILTER_USE_KEY
+        );
+
+        $headerLines[] = "---";
+        foreach ($parts as $key => $part) {
+            $headerLines[] = "{$key}: {$part}";
+        }
+        $headerLines[] = "---";
+
+        $header = implode("\n", $headerLines);
+        $content = $header . "\n" . $originalParts['content'];
+
+        return $content;
     }
 }

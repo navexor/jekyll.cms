@@ -29,7 +29,8 @@ class PostServiceProvider extends ServiceProvider
             function () {
                 $post = new Post(
                     config('blog.file'),
-                    $this->app->make('App\Repositories\Post\PostParser')
+                    $this->app->make('App\Repositories\Post\PostParser'),
+                    $this->app->make('App\Repositories\Post\PostFile')
                 );
                 return $post;
             }
