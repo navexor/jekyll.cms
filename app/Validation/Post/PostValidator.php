@@ -9,9 +9,8 @@ class PostValidator extends AValidator
     protected function getRules()
     {
         return [
-            'name' => ['required'],
-            'icon_file' => 'sometimes|mimes:jpeg,png,gif',
-            'position' => 'integer',
+            'title' => 'required',
+            'date' => 'date'
         ];
     }
 }
