@@ -47,14 +47,14 @@ class PostParser
     public function renderContent(array $parts)
     {
         $originalParts = $parts;
+        $filteredParts = [];
 
-        $parts = array_filter(
-            $parts,
-            function($k) {
-                return in_array($k, $this->_metaFields);
-            },
-            ARRAY_FILTER_USE_KEY
-        );
+        foreach ($parts as $k => $v) {
+            if (in_array($k, $this->_metaFields)) {
+                $filteredParts[$k] = $v;
+            }
+        }
+        $parts = $filteredParts;
 
         $headerLines[] = "---";
         foreach ($parts as $key => $part) {

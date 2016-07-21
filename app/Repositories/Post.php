@@ -53,7 +53,7 @@ class Post implements IModel
     public function update($id, array $data)
     {
         //remove the old one
-        $this->remove($id);
+        //$this->remove($id);
 
         //save the new
         return $this->create($data);

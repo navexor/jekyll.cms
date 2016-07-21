@@ -14,6 +14,11 @@
 </div>
 
 <div class="form-group">
+    {{ Form::label('fileName') }}
+    {{ Form::text('fileName', null, ['class' => 'form-control']) }}
+</div>
+
+<div class="form-group">
     {{ Form::label('content') }}
     {{ Form::textarea('content', null, ['class' => 'form-control ckeditor', 'data-token' => csrf_token()]) }}
 </div>
