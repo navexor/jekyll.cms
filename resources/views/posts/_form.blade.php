@@ -40,7 +40,7 @@
 
 <div class="form-group">
     {{ Form::label('date') }}
-    {{ Form::text('date', null, ['class' => 'form-control']) }}
+    {{ Form::text('date', null, ['class' => 'form-control', 'data-datetimepicker' => 'true']) }}
 </div>
 
 <div class="form-group">

@@ -10,4 +10,13 @@ $(document).ready(function() {
         });
 
     });
+
+    /*init datetimepicker*/
+    $('[data-datetimepicker]').datetimepicker(
+        {
+            lang: 'en',
+            format: 'Y-m-d H:i:s',
+            scrollInput: false
+        }
+    );
 });
