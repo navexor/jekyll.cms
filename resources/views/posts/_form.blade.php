@@ -45,4 +45,5 @@
 
 <div class="form-group">
     {{ Form::submit('Save', ['class' => 'btn btn-primary']) }}
+    <a class="btn" href="{{action('PostController@index')}}">Cancel</a>
 </div>

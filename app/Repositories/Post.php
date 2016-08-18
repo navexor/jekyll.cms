@@ -53,7 +53,7 @@ class Post implements IModel
     public function update($id, array $data)
     {
         //remove the old one
-        //$this->remove($id);
+        $this->remove($id);
 
         //save the new
         return $this->create($data);
@@ -112,7 +112,7 @@ class Post implements IModel
         $parsedContent = $this->_parser->parseFile($content);
 
         $parsedContent['id'] = md5($filename);
-        $parsedContent['color'] = '#' . substr(md5($filename), 0, 6);
+        $parsedContent['color'] = '#' . $this->_parser->changeBrightness('#' . substr(md5($filename), 0, 6), 555);
         $parsedContent['fileName'] = basename($filename, '.md');
         $parsedContent['filePath'] = $filename;
 

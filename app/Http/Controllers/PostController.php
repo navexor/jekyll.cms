@@ -36,6 +36,12 @@ class PostController extends Controller
             ->with('post', $post);
     }
 
+    public function create()
+    {
+        return view('posts.create')
+            ->with('post', []);
+    }
+
     public function update($id)
     {
         $post = $this->postForm->update($id, \Request::all());
@@ -46,6 +52,19 @@ class PostController extends Controller
         } else {
             $redirect = \Redirect::action('PostController@index');
             return $redirect->with('alert_success', trans('Post has been updated successfully'));
+        }
+    }
+
+    public function store()
+    {
+        $post = $this->postForm->create(\Request::all());
+        if (is_null($post)) {
+            return \Redirect::action('PostController@create')
+                ->withErrors($this->postForm->errors())
+                ->withInput();
+        } else {
+            $redirect = \Redirect::action('PostController@index');
+            return $redirect->with('alert_success', trans('Post has been added successfully'));
         }
     }
 }

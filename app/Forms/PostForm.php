@@ -12,4 +12,22 @@ class PostForm extends CrudForm
         parent::__construct($validator, $repository);
     }
 
+    public function prepareInputData(array $data)
+    {
+        $data = parent::prepareInputData($data);
+
+        if (empty($data['date'])) {
+            $data['date'] = date("Y-m-d H:i:s", time());
+        }
+
+        if (empty($data['fileName'])) {
+
+            $title = date("Y-m-d", strtotime($data['date'])) . ' ' . $data['title'];
+            $data['fileName'] = \StringHelper::generateFilename($title);
+
+        }
+
+        return $data;
+    }
+
 }

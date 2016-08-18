@@ -164,6 +164,7 @@ return [
         App\Providers\RepositoriesServiceProvider::class,
         App\Providers\FormServiceProvider::class,
         App\Providers\PostServiceProvider::class,
+        App\Providers\HelpersServiceProvider::class,
 
     ],
 
@@ -218,6 +219,7 @@ return [
 
         /*custom classes*/
         'Post' => App\Facades\Post::class,
+        'StringHelper' => App\Facades\StringHelper::class,
 
     ],
 
