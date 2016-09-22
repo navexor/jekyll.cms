@@ -165,6 +165,8 @@ return [
         App\Providers\FormServiceProvider::class,
         App\Providers\PostServiceProvider::class,
         App\Providers\HelpersServiceProvider::class,
+        App\Providers\MenuServiceProvider::class,
+        App\Providers\ComposersServiceProvider::class,
 
     ],
 
