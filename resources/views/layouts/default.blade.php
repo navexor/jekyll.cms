@@ -15,6 +15,8 @@
     @yield('content')
 </div>
 
+@include('layouts._popups')
+
 @include('layouts._footer')
 
 </body>

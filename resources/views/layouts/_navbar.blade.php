@@ -35,9 +35,8 @@
                     </li>
                 @endforeach
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="../navbar/">Keep it for generate button</a></li>
-            </ul>
+            <a class="btn btn-success navbar-btn navbar-right" data-click="generateBlog" href="../navbar/">Build blog</a>
+
         </div><!--/.nav-collapse -->
     </div>
 </nav>
