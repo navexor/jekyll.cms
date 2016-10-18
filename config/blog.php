@@ -13,4 +13,9 @@ return [
         'posts_dir' => '/_posts'
     ],
 
+    'jekyll' => [
+        'bin' => '/usr/local/rvm/gems/ruby-2.0.0-p643@railstutorial_rails_4_0/wrappers/',
+        'rebuild' => 'jekyll build',
+    ]
+
 ];

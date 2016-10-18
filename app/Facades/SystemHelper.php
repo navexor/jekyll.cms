@@ -2,10 +2,10 @@
 
 use Illuminate\Support\Facades\Facade;
 
-class StringHelper extends Facade
+class SystemHelper extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'string.helper';
+        return 'system.helper';
     }
 }

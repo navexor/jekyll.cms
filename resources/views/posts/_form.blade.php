@@ -1,4 +1,4 @@
-{{ Form::hidden('layout') }}
+{{ Form::hidden('layout', 'post') }}
 
 @if (count($errors))
     <ul class="list-group">

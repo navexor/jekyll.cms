@@ -35,7 +35,7 @@
                     </li>
                 @endforeach
             </ul>
-            <a class="btn btn-success navbar-btn navbar-right" data-click="generateBlog" href="../navbar/">Build blog</a>
+            <a class="btn btn-success navbar-btn navbar-right" data-click="generateBlog" href="{{route('site.rebuild')}}">Build blog</a>
 
         </div><!--/.nav-collapse -->
     </div>

@@ -222,6 +222,7 @@ return [
         /*custom classes*/
         'Post' => App\Facades\Post::class,
         'StringHelper' => App\Facades\StringHelper::class,
+        'SystemHelper' => App\Facades\SystemHelper::class,
 
     ],
 

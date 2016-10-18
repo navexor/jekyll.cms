@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Helpers\StringHelper;
+use App\Helpers\SystemHelper;
 use Illuminate\Support\ServiceProvider;
 
 class HelpersServiceProvider extends ServiceProvider
@@ -27,6 +28,11 @@ class HelpersServiceProvider extends ServiceProvider
         $this->app['string.helper'] = $this->app->share(
             function () {
                 return new StringHelper();
+            }
+        );
+        $this->app['system.helper'] = $this->app->share(
+            function () {
+                return new SystemHelper();
             }
         );
     }

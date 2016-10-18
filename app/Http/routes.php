@@ -16,3 +16,6 @@ Route::get('/', function () {
 })->name('home');
 
 Route::resource('posts','PostController');
+Route::get(
+    'site/rebuild', ['as' => 'site.rebuild', 'uses' => 'SiteController@rebuild']
+);

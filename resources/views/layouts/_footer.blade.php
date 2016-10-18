@@ -4,6 +4,7 @@
     <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
     <script src="/vendor/unisharp/laravel-ckeditor/adapters/jquery.js"></script>
     <script src="/external/datetimepicker/js/jquery.datetimepicker.js"></script>
+    <script src="/js/ajax.js"></script>
     <script src="/js/start.js"></script>
     <script src="/js/events.js"></script>
 </footer>
