@@ -26,7 +26,7 @@
         var self = $(this);
         var handlerName = self.data('click');
 
-        if (handlerName) {
+        if (handlerName && handlers[handlerName]) {
             handlers[handlerName](self);
         }
 

@@ -65,4 +65,17 @@ class PostController extends Controller
             return $redirect->with('alert_success', trans('Post has been added successfully'));
         }
     }
+
+    public function destroy($id)
+    {
+        $post = $this->postRepo->find($id);
+        $redirect = \Redirect::action('PostController@index');
+
+        if ($post) {
+            $this->postRepo->remove($id);
+            return $redirect->with('alert_success', trans('Post has been removed successfully'));
+        }
+
+        return $redirect;
+    }
 }

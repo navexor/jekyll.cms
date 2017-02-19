@@ -15,6 +15,9 @@ class PostFile
 
     public function save($fileName, $content)
     {
+        $path = $path_parts = pathinfo($fileName);
+        \File::makeDirectory($path['dirname'], 0775, true);
+
         $bytesWritten = \File::put($fileName, $content);
         if ($bytesWritten === false) {
             throw new \Exception("Error writing to file");
