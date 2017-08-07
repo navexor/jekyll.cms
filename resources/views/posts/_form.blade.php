@@ -20,8 +20,10 @@
 
 <div class="form-group">
     {{ Form::label('content') }}
-    {{ Form::textarea('content', null, ['class' => 'form-control ckeditor', 'data-token' => csrf_token()]) }}
+    {{ Form::textarea('content', null, ['class' => 'form-control richeditors', 'data-token' => csrf_token()]) }}
 </div>
+
+<a href="" data-click="addToEditor">Test add to WYSYVG</a>
 
 <div class="form-group">
     {{ Form::label('categories') }}

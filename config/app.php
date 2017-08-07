@@ -149,9 +149,6 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-        Unisharp\Ckeditor\ServiceProvider::class,
-        Unisharp\Laravelfilemanager\LaravelFilemanagerServiceProvider::class,
-        Intervention\Image\ImageServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
 
         /*
@@ -217,7 +214,6 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
 
         /*vendors*/
-        'Image' => Intervention\Image\Facades\Image::class,
 
         /*custom classes*/
         'Post' => App\Facades\Post::class,

@@ -8,7 +8,7 @@
                 <h4 class="modal-title">Jekyll build</h4>
             </div>
             <div class="modal-body">
-                <img src="images/ajax-loader.gif">
+                <div class="loading-small"></div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

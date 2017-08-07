@@ -1,14 +1,26 @@
 $(document).ready(function() {
     /*init CKeditor*/
     $(function () {
-        var token = '123';
-        $('.ckeditor').ckeditor({
-            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
-            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=' + token,
-            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
-            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token=' + token
+        $('.richeditors').each(function(e){
+            CKEDITOR.replace(this.id, {
+                toolbarGroups: [
+                    { name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
+                    { name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
+                    { name: 'links' },
+                    { name: 'insert' },
+                    { name: 'forms' },
+                    { name: 'tools' },
+                    { name: 'document',	   groups: [ 'mode', 'document', 'doctools' ] },
+                    { name: 'others' },
+                    '/',
+                    { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+                    { name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
+                    { name: 'styles' },
+                    { name: 'colors' },
+                    { name: 'about' }
+                ]
+            });
         });
-
     });
 
     /*init datetimepicker*/

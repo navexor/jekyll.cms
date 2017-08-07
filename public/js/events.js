@@ -8,13 +8,20 @@
         console.log('generateBlog');
 
         var popupContainer = $('#popup-generator');
-        popupContainer.find('.modal-body').html('<img src="images/ajax-loader.gif">');
+        popupContainer.find('.modal-body').html('<div class="loading-small"></div>');
         popupContainer.modal();
 
         var afterExec = function(result) {
             popupContainer.find('.modal-body').html(result);
         };
         callAjax(elem.prop('href'), {}, afterExec);
+    };
+
+    handlers.addToEditor = function(elem) {
+        console.log('addToEditor');
+        var ckEditor = CKEDITOR.instances['content'];
+        ckEditor.focus();
+        ckEditor.insertHtml('Hello world');
     };
 
 
