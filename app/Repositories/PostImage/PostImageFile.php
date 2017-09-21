@@ -1,18 +1,14 @@
 <?php
+namespace App\Repositories\PostImage;
+
 /**
  * Created by PhpStorm.
  * User: oleg
- * Date: 12.07.2016
+ * Date: 15.08.2017
  * Time: 22:41
  */
-
-namespace App\Repositories\Post;
-
-
-class PostFile
+class PostImageFile
 {
-    const POST_EXTENSION = '.md';
-
     public function save($fileName, $content)
     {
         $path = pathinfo($fileName);

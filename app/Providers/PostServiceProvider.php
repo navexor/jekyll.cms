@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Repositories\Post;
+use App\Repositories\PostImage;
 use Illuminate\Support\ServiceProvider;
 
 class PostServiceProvider extends ServiceProvider
@@ -33,6 +34,17 @@ class PostServiceProvider extends ServiceProvider
                     $this->app->make('App\Repositories\Post\PostFile')
                 );
                 return $post;
+            }
+        );
+
+        $this->app->singleton(
+            'App\Repositories\PostImage',
+            function () {
+                $postImage = new PostImage(
+                    config('blog.file'),
+                    $this->app->make('App\Repositories\PostImage\PostImageFile')
+                );
+                return $postImage;
             }
         );
 

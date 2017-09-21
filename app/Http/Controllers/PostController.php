@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Forms\PostForm;
-use App\Http\Requests;
 use App\Repositories\Post;
 
 class PostController extends Controller
@@ -51,6 +50,12 @@ class PostController extends Controller
             $redirect = \Redirect::action('PostController@index');
             return $redirect->with('alert_success', trans('Post has been updated successfully'));
         }
+    }
+
+    public function postUpload()
+    {
+        $files = $_FILES;
+        return 'hahah';
     }
 
     public function store()

@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Forms\PostForm;
+use App\Forms\PostImageForm;
 use Illuminate\Support\ServiceProvider;
 
 class FormServiceProvider extends ServiceProvider
@@ -19,6 +20,16 @@ class FormServiceProvider extends ServiceProvider
             function () {
                 return new PostForm(
                     $this->app->make('App\Validation\Post\PostValidator'),
+                    $this->app->make('App\Repositories\IModel')
+                );
+            }
+        );
+
+        $this->app->bind(
+            'App\Forms\PostImageForm',
+            function () {
+                return new PostImageForm(
+                    $this->app->make('App\Validation\Post\PostImageValidator'),
                     $this->app->make('App\Repositories\IModel')
                 );
             }

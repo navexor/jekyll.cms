@@ -68,7 +68,7 @@ class PostParser
         return $content;
     }
 
-    function changeBrightness( $hex, $adjust )
+    public function changeBrightness( $hex, $adjust )
     {
         $red   = hexdec( $hex[0] . $hex[1] );
         $green = hexdec( $hex[2] . $hex[3] );
